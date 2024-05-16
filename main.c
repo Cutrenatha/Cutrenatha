@@ -12,35 +12,35 @@ int main(){
     char *token;
 
     //menghitung ada berapa banyak karakter di dalam file.txt
-    character = countCharacter(character);
+    character = count_character(character);
     
     //menghitung berapa banyak baris yang ada di file.txt
-    line = countLine(line);
+    line = count_line(line);
     
     //menghitung kalimat terpanjang ada berapa karakter
-    lenght = countLenght(lenght);
+    lenght = count_lenght(lenght);
     
     //mendeklarasikan array kalimat sebesar jumlah karakter
     char kalimat[character];
 
     //Melakukan scan baris per baris file.txt
     //dan memasukkan hasil scan ke array kalimat
-    characterToVariable(line, lenght, kalimat);
+    character_to_variable(line, lenght, kalimat);
 
     //menghitung jumlah kata yang sudah di masukkan ke array kalimat
-    word = countWord(word,character,kalimat);
+    word = count_word(word,character,kalimat);
 
     //mendeklarasi struct datas dengan array sebanyak jumlah kata
     data datas[word];
 
     //Tokenisasi dan memasukkan hasil token ke data struct
-    strtokCharacter(token, kalimat,datas);
+    strtok_character(token, kalimat,datas);
 
     //Menyorting hasil token yang sudah dimasukkan ke data struct
     //secara desc
-    bubbleSort(datas,word);
+    bubble_sort(datas,word);
 
-    //Menu tampila awal
+    //Menu tampilan awal
     int jawab;
     do{
         printf("Selamat Datang di Project BIG CHALLENGE\n\n");
@@ -54,7 +54,7 @@ int main(){
         //jika user memilih 1, maka akan memasukkan data ke file binary
         if(jawab==1){
             system("cls");
-            writeToBinary(datas,word);
+            write_to_binary(datas,word);
             break;
         }
         // jika user memilih 2, maka program akan memerintahkan user untuk memilih 1 dahulu
@@ -62,11 +62,11 @@ int main(){
             system("cls");
             printf("\nPilihlah nomor 1 terlebih dahulu\n\n");
         }
-        //jika user memilih 3, maka akan keluar dari program
+        //jika user memilih 3, maka otomatis keluar dari program
         else if(jawab==3){
             exit(1);
         }
-        //jika user memilih angka yang buka tertera di menu, maka program akan meminta input ulang
+        // program akan meminta input ulang jika user memilih angka yang bukan tertera di menu 
         else{
             system("cls");
             printf("Selamat Datang di Project BIG CHALLENGE\n\n");
